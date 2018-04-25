@@ -642,7 +642,7 @@ struct npcm_group {
 	int npins;
 };
 
-#define NPCM_GRPS (\
+#define NPCM_GRPS \
 	GRP(smb0), \
 	GRP(smb0b), \
 	GRP(smb0c), \
@@ -758,7 +758,7 @@ struct npcm_group {
 	GRP(lkgpo1), \
 	GRP(lkgpo2), \
 	GRP(nprd_smi), \
-	) \
+	\
 
 /* Group enums */
 enum {
