@@ -37,3 +37,10 @@
 &serial3 {
 	status = "okay";
 };
+
+&spi0 {
+	spi-nor@0 {
+		label = "bmc";
+		#include "openbmc-flash-layout-nuvoton.dtsi"
+	};
+};

@@ -111,6 +111,23 @@
 			clocks = <&clk_refclk>, <&clk_sysbypck>, <&clk_mcbypck>;
 		};
 
+		spi0: spi@fb000000 {
+			compatible = "nuvoton,npcm750-spi";
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <0xfb000000 0x1000>, <0x80000000 0x10000000>;
+			reg-names = "control", "memory";
+			chip-max-address-map = <0x8000000>;
+			clocks = <&clk NPCM7XX_CLK_AHB>;
+			clock-names = "clk_ahb";
+			spi-nor@0 {
+					compatible = "jedec,spi-nor";
+					#address-cells = <1>;
+					#size-cells = <1>;
+					reg = <0>;
+			};
+		};
+
 		apb {
 			#address-cells = <1>;
 			#size-cells = <1>;
